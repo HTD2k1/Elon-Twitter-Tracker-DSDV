@@ -22,9 +22,23 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
 
   const [selectedMetric, setSelectedMetric] = useState("nlikes");
   const [dataset, setSelectedDataset] = useState("");
+  const [color, setColor] = useState("#e67b02");
 
   useEffect(() => {
     setSelectedDataset(selectedDataset);
+    switch (selectedDataset) {
+      case "Bitcoin":
+        setColor("#e67b02");
+        break;
+      case "Dogecoin":
+        setColor("#b59204");
+        break;
+      case "Tesla":
+        setColor("#d40a02");
+        break;
+      default:
+        break;
+    }
   }, [selectedDataset]);
 
   useEffect(() => {
@@ -163,7 +177,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
       .attr("class", "tweetcircle")
       .attr("id", (d) => "tweetid" + d.id)
       .attr("r", 5)
-      .style("fill", "black")
+      .style("fill", color)
       .style("opacity", 0)
       .style("cursor", "pointer")
       // these have to be functions to use the this keyword
