@@ -22,19 +22,20 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
 
   const [selectedMetric, setSelectedMetric] = useState("nlikes");
   const [dataset, setSelectedDataset] = useState("");
-  const [color, setColor] = useState("#e67b02");
 
   useEffect(() => {
     setSelectedDataset(selectedDataset);
+    if (!rankingRef.current) return;
+    const svg = d3.select(rankingRef.current);
     switch (selectedDataset) {
       case "Bitcoin":
-        setColor("#e67b02");
+        svg.attr("fill", "#e67b02");
         break;
       case "Dogecoin":
-        setColor("#b59204");
+        svg.attr("fill", "#b59204");
         break;
       case "Tesla":
-        setColor("#d40a02");
+        svg.attr("fill", "#d40a02");
         break;
       default:
         break;
@@ -87,7 +88,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
         .text(label)
         .attr("x", margin.left + (width - margin.left - margin.right) / 2)
         .attr("y", 40)
-        .attr("fill", "currentColor");
+    /* .attr("fill", "currentColor"); */
 
     const y = d3
       .scaleLinear()
@@ -109,7 +110,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
           -(margin.top + (height - margin.top - margin.bottom) / 2) + 10
         )
         .attr("y", -80)
-        .attr("fill", "currentColor");
+      /* .attr("fill", "currentColor"); */
 
       g.selectAll("g.tick text").attr("transform", "rotate(5)");
     };
@@ -177,7 +178,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
       .attr("class", "tweetcircle")
       .attr("id", (d) => "tweetid" + d.id)
       .attr("r", 5)
-      .style("fill", color)
+      /* .style("fill", "black") */
       .style("opacity", 0)
       .style("cursor", "pointer")
       // these have to be functions to use the this keyword
