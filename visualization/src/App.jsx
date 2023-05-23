@@ -2,12 +2,8 @@ import { useEffect, useState } from "react";
 import css from "./App.module.css";
 import Navigation from "./components/navigation/Navigation";
 import * as d3 from "d3";
-import EngagementRankingPage from "./pages/EnagementRankingPage/EngagementRankingPage";
-import Introduction from "./pages/IntroductionPage/IntroductionPage";
 import { Route, Routes } from "react-router-dom";
 import MainChartPage from "./pages/MainChartPage/MainChartPage";
-import TweetGroupsPage from "./pages/TweetGroupsPage/TweetGroupsPage";
-import ConclusionPage from "./pages/ConclusionPage/ConclusionPage";
 import Spinner from "./components/spinner/Spinner";
 
 function App() {
@@ -130,6 +126,15 @@ function App() {
         </header>
         <article className={css.content}>
           <Routes>
+            <Route
+              path="/main"
+              element={
+                <MainChartPage
+                  tweets={tweets?.[selectedDataset]}
+                  asset={datasets?.[selectedDataset]}
+                />
+              }
+            />
           </Routes>
         </article>
       </div>
