@@ -3,9 +3,9 @@ import css from "./EngagementRanking.module.css";
 import * as d3 from "d3";
 import { addTweetBox } from "../../utils/addTweet";
 import { useNavigate } from "react-router-dom";
-import bitcoinLogo from "../../../public/Bitcoin.svg"
-import dogeLogo from "../../../public/Dogecoin.svg"
-import teslaLogo from "../../../public/Tesla.svg"
+import bitcoinLogo from "/Bitcoin.svg"
+import dogeLogo from "/Dogecoin.svg"
+import teslaLogo from "/Tesla.svg"
 
 const EngagementRanking = ({ tweets, selectedDataset }) => {
   const margin = { top: 10, right: 30, bottom: 60, left: 100 };
@@ -25,6 +25,21 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
 
   useEffect(() => {
     setSelectedDataset(selectedDataset);
+    if (!rankingRef.current) return;
+    const svg = d3.select(rankingRef.current);
+    switch (selectedDataset) {
+      case "Bitcoin":
+        svg.attr("fill", "#e67b02");
+        break;
+      case "Dogecoin":
+        svg.attr("fill", "#b59204");
+        break;
+      case "Tesla":
+        svg.attr("fill", "#d40a02");
+        break;
+      default:
+        break;
+    }
   }, [selectedDataset]);
 
   useEffect(() => {
@@ -73,7 +88,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
         .text(label)
         .attr("x", margin.left + (width - margin.left - margin.right) / 2)
         .attr("y", 40)
-        .attr("fill", "currentColor");
+    /* .attr("fill", "currentColor"); */
 
     const y = d3
       .scaleLinear()
@@ -95,7 +110,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
           -(margin.top + (height - margin.top - margin.bottom) / 2) + 10
         )
         .attr("y", -80)
-        .attr("fill", "currentColor");
+      /* .attr("fill", "currentColor"); */
 
       g.selectAll("g.tick text").attr("transform", "rotate(5)");
     };
@@ -163,7 +178,7 @@ const EngagementRanking = ({ tweets, selectedDataset }) => {
       .attr("class", "tweetcircle")
       .attr("id", (d) => "tweetid" + d.id)
       .attr("r", 5)
-      .style("fill", "black")
+      /* .style("fill", "black") */
       .style("opacity", 0)
       .style("cursor", "pointer")
       // these have to be functions to use the this keyword

@@ -86,22 +86,22 @@ function App() {
     switch (selectedDataset) {
       case "Bitcoin":
         d3.select(".icon").attr("href", "/Bitcoin.svg");
-        root.style.setProperty("--main-color", "#d17c5445");
+        root.style.setProperty("--main-color", "#fcd8ae");
         root.style.setProperty("--text-color", "#1c1c1c");
-        root.style.setProperty("--header-color", "#d3732e61");
+        root.style.setProperty("--header-color", "#E9983D");
         break;
 
       case "Dogecoin":
         d3.select(".icon").attr("href", "/Dogecoin.svg");
-        root.style.setProperty("--main-color", "#e4b86760");
+        root.style.setProperty("--main-color", "#fff1b8");
         root.style.setProperty("--text-color", "#1c1c1c");
-        root.style.setProperty("--header-color", "#d99a266e");
+        root.style.setProperty("--header-color", "#B6A047");
         break;
       case "Tesla":
         d3.select(".icon").attr("href", "/Tesla.svg");
-        root.style.setProperty("--main-color", "#b6545768");
+        root.style.setProperty("--main-color", "#fcc2c0");
         root.style.setProperty("--text-color", "#1c1c1c");
-        root.style.setProperty("--header-color", "#a1454858");
+        root.style.setProperty("--header-color", "#D53933");
         break;
 
       default:
