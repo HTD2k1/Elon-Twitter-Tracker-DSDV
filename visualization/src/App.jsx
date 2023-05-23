@@ -5,6 +5,8 @@ import * as d3 from "d3";
 import { Route, Routes } from "react-router-dom";
 import MainChartPage from "./pages/MainChartPage/MainChartPage";
 import EngagementRankingPage from "./pages/EnagementRankingPage/EngagementRankingPage";
+import TweetGroupsPage from "./pages/TweetGroupsPage/TweetGroupsPage";
+import ConclusionPage from "./pages/ConclusionPage/ConclusionPage";
 import Spinner from "./components/spinner/Spinner";
 
 function App() {
@@ -141,6 +143,14 @@ function App() {
               element={
                 <EngagementRankingPage tweets={tweets?.[selectedDataset]} selectedDataset={selectedDataset} />
               }
+            />
+            <Route
+              path="/groups"
+              element={<TweetGroupsPage tweets={tweets} />}
+            />
+            <Route
+              path="/conclusion"
+              element={<ConclusionPage tweets={tweets} />}
             />
           </Routes>
         </article>

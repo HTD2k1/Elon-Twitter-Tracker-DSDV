@@ -1,0 +1,70 @@
+.container {
+  width: 70%;
+  height: 450px;
+}
+.metricButtonsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+  position: relative;
+  left: 200px;
+  top: -50px;
+}
+
+.metricButton {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 100px;
+}
+
+.metricButton:last-child {
+  margin-left: 100px;
+}
+
+.metricButton > img {
+  opacity: 0.7;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.changeStats {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 24px;
+  width: 40%;
+  margin-top: -32px;
+  border-left: 1px solid black;
+  padding-left: 80px;
+  margin-bottom: 48px;
+}
+
+.changeStats > div {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+  justify-content: space-between;
+  position: relative;
+  margin-left: 48px;
+}
+
+.changeStats > div > img {
+  position: absolute;
+  left: -54px;
+  top: 28px;
+}
+
+.changeStats > div > span:first-child {
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.changeStats > div > span:last-child {
+  font-size: 32px;
+  font-weight: lighter;
+}

@@ -1,0 +1,26 @@
+.title {
+  font-size: 1.4vw;
+  font-weight: bold;
+  color: var(--text-color);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in;
+  position: relative;
+  opacity: 0;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; 
+}
+
+.textSection {
+  font-size: 14px;
+  display: flexbox;
+  flex-direction: column;
+  gap: 10%;
+}
+
+.text {
+  border: 5px solid #ff6347;
+  border-radius: 1px;
+}
