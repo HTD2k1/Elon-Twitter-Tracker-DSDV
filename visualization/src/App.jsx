@@ -4,6 +4,7 @@ import Navigation from "./components/navigation/Navigation";
 import * as d3 from "d3";
 import { Route, Routes } from "react-router-dom";
 import MainChartPage from "./pages/MainChartPage/MainChartPage";
+import EngagementRankingPage from "./pages/EnagementRankingPage/EngagementRankingPage";
 import Spinner from "./components/spinner/Spinner";
 
 function App() {
@@ -133,6 +134,12 @@ function App() {
                   tweets={tweets?.[selectedDataset]}
                   asset={datasets?.[selectedDataset]}
                 />
+              }
+            />
+            <Route
+              path="/ranking"
+              element={
+                <EngagementRankingPage tweets={tweets?.[selectedDataset]} selectedDataset={selectedDataset} />
               }
             />
           </Routes>
