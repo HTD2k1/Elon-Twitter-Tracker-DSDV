@@ -50,13 +50,13 @@ const Introduction = ({ nTweets }) => {
           />
           <HeroStats
             size={70}
-            value={95}
+            value={141}
             text={"Twitter followers"}
             suffix={"M"}
           />
           <HeroStats
             size={70}
-            value={255}
+            value={198}
             text={"Net Worth"}
             prefix={"$"}
             suffix={"B"}
