@@ -50,7 +50,7 @@ const Introduction = ({ nTweets }) => {
           />
           <HeroStats
             size={70}
-            value={141}
+            value={142}
             text={"Twitter followers"}
             suffix={"M"}
           />
@@ -71,7 +71,7 @@ const Introduction = ({ nTweets }) => {
             Elon Musk, one of the wealthiest individuals globally, is an iconic figure of the twenty-first century whose impact extends across various cultural aspects. He has established highly prosperous ventures such as PayPal, Tesla, and SpaceX.
             <br />
             <br />
-            Due to Elon Musk's significant influence and substantial following, with nearly 80 million Twitter followers, his tweets possess the potential for wide-ranging consequences. In recent times, Elon Musk has faced scrutiny from media and regulators who have accused him of engaging in market manipulation of stocks and cryptocurrencies.
+            Due to Elon Musk's significant influence and substantial following, with nearly 142 million Twitter followers, his tweets possess the potential for wide-ranging consequences. In recent times, Elon Musk has faced scrutiny from media and regulators who have accused him of engaging in market manipulation of stocks and cryptocurrencies.
             <br />
             <br />
             The objective of this visualization is to demonstrate the impact of Elon Musk's tweets on the stock and cryptocurrency markets. Join us on this exploration as we delve into the potential market influence of Elon Musk.
