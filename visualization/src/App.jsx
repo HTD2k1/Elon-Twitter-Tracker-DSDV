@@ -8,6 +8,7 @@ import EngagementRankingPage from "./pages/EnagementRankingPage/EngagementRankin
 import TweetGroupsPage from "./pages/TweetGroupsPage/TweetGroupsPage";
 import ConclusionPage from "./pages/ConclusionPage/ConclusionPage";
 import Spinner from "./components/spinner/Spinner";
+import Introduction from "./pages/IntroductionPage/IntroductionPage";
 
 function App() {
   const [selectedDataset, setSelectedDataset] = useState("Bitcoin");
@@ -129,6 +130,10 @@ function App() {
         </header>
         <article className={css.content}>
           <Routes>
+            <Route
+              path="/"
+              element={<Introduction nTweets={allTweets.length} />}
+            />
             <Route
               path="/main"
               element={
